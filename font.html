@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Font Size Adjuster</title>
+    <style>
+        /* General Styles */
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            background-color: #B6D0E2;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 0;
+        }
+
+        h2 {
+            color: #f4f4f4;
+            margin-bottom: 20px;
+        }
+
+        .column-box {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            width: 300px;
+            text-align: center;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            margin: 10px 5px;
+            cursor: pointer;
+            border: none;
+            border-radius: 5px;
+            background-color: #007BFF;
+            color: #fff;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        #text {
+            font-size: 16px;
+            margin-top: 20px;
+            color: #333;
+        }
+
+        a {
+            display: inline-block;
+            margin-top: 20px;
+            text-decoration: none;
+            color: #007BFF;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+
+        a:hover {
+            color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <h2>Font Size Adjuster</h2>
+    <div class="column-box"> 
+        <button id="increase" onclick="changeFontSize('increase')">Increase Size</button>
+        <button id="decrease" onclick="changeFontSize('decrease')">Decrease Size</button>
+        <p id="text">Espiritu Kyle</p>
+        <a href="mdas.html">Go to MDAS</a>
+    </div>
+
+    <script>
+        let currentFontSize = 16;
+
+        function changeFontSize(action) {
+            const paragraph = document.getElementById('text');
+
+            if (action === 'increase') {
+                currentFontSize += 2;
+            } else if (action === 'decrease') {
+                currentFontSize = Math.max(8, currentFontSize - 2);
+            }
+
+            paragraph.style.fontSize = currentFontSize + 'px';
+        }
+    </script>
+</body>
+</html>
